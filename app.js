@@ -53,15 +53,13 @@ function checkOrRemove(e)
     const item = e.target;
     if(item.classList[0] === "delete-btn")
     {
-        const confirmation =  confirm("are you sure you want to delete this?");
-        if(confirmation == true)
-        {const todo = item.parentElement;
+        const todo = item.parentElement;
         todo.classList.toggle("slide");
         todo.addEventListener('transitionend', function()
         {
             todo.remove();
         })
-        }
+        
     }
 
     if(item.classList[0] === "complete-btn")
